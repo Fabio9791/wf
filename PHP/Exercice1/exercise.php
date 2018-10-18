@@ -1,22 +1,22 @@
 <?php
 
-$booleanTrue;
-$booleanFalse;
+$booleanTrue = true;
+$booleanFalse = false;
 
-$int;
+$int = 10;
 
-$float;
+$float=2/3;
 
-$integer;
+$integer = 10;
 
-$double;
+$double=2/3;
 
-$string;
+$string="fabio is the best" ;
 
-$array;
+$array=['fabio','is','the','best'];
 
-$doubleDimenssionArray;
+$doubleDimenssionArray=[[1],[2]];
 
-$associativeArray;
+$associativeArray=['deng'=>'mama'];
 
-$null;
+$null=null;
