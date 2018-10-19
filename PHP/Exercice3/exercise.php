@@ -3,7 +3,7 @@
 $input;
 $a=0;
 $b=0;
-$winner="";
+$winner;
 foreach($input as $round){
     if($round[0]>$round[1]){
         $a++;
