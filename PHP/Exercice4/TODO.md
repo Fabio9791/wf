@@ -1,4 +1,4 @@
-# Exercise 4
+# Exercise 4 
 
 To prepare some meeting, your CTO want a function returning all mondays of a month as string into an array. The function will receive at first argument a year, and at second place, a month, both as integer type.
 
