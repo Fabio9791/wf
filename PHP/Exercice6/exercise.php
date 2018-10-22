@@ -8,19 +8,8 @@ function easterReverse(){
     
     fseek($res,floor(strlen($fileContent) / 2),SEEK_SET);
     fwrite($res,$correctContent);
-    echo $res;
     
-    
-    /*for($i=floor(strlen($fileContent) / 2); strlen($fileContent); $i--){
-       $reverseContent.=
-       fseek('file.txt',-1,SEEK_CUR);
-    }*/
-
-    //fseek('file.txt',floor(strlen($fileContent) / 2),SEEK_END);
-    
-    
-    //echo $fileContent;
-    //fwrite('file.txt',);
+    fclose($res);
 }
 
 easterReverse();
