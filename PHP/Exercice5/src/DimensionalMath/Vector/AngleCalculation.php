@@ -1,6 +1,6 @@
 <?php
 
-namespace AngleCal;
+namespace DimensionalMath\Vector;
 
 function getVectorAngle($vectorA, $vectorB) {
    
