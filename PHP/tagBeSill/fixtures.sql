@@ -22,3 +22,7 @@ INSERT INTO ProjectCategory VALUES
 	(1, 1),
 	(2, 2),
 	(2, 3);
+    
+INSERT INTO role(label, description) VALUES
+	('user', 'Lorem ipsum'),
+	('Admin', 'Lorem ipsum');

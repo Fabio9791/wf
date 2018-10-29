@@ -22,7 +22,7 @@
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item" <?php if($_SERVER['REQUEST_URI'] == '/'){?>active<?php }?>><a class="nav-link" href="/">Home</a></li>
 				<li class="nav-item" <?php if($_SERVER['REQUEST_URI'] == '/register'){?>active<?php }?>><a class="nav-link" href="/register">Register</a></li>
-				</li>
+				<li class="nav-item" <?php if($_SERVER['REQUEST_URI'] == '/login'){?>active<?php }?>><a class="nav-link" href="/login">Login</a></li>
 			</ul>
 			
 		</div>
