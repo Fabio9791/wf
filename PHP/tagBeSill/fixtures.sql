@@ -26,3 +26,4 @@ INSERT INTO ProjectCategory VALUES
 INSERT INTO role(label, description) VALUES
 	('user', 'Lorem ipsum'),
 	('Admin', 'Lorem ipsum');
+	

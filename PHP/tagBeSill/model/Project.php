@@ -28,3 +28,4 @@ function getAllProjects() {
     return $projects;
 }
 
+
