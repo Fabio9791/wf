@@ -1,4 +1,44 @@
-header{
-	display:flex;
-	background-color:lightblue;
+body {
+	box-sizing: border-box;
+	transition-duration: 0.3s;
+	margin: 0;
+}
+
+main {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+	display: flex;
+	background-color: lightblue;
+}
+
+header img {
+	height: 5rem;
+}
+
+footer {
+	background-color: lightblue;
+	position: fixed;
+	bottom: 0;
+	padding: 0.3rem;
+	color: rgb(100, 100, 100);
+	width: 100%;
+	font-size: 0.7rem;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+	padding: 0 1rem;
+	flex-direction: row-reverse;
+}
+
+nav ul li a {
+	padding: 0.5rem 1rem;
+	background-color: lightgray;
+	margin: 0 0.3rem;
+	text-decoration: none;
+	color: black;
 }

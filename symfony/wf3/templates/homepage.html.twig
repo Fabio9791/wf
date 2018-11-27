@@ -3,6 +3,8 @@
 {% block title %}{{ parent() }} homepage{% endblock %}
 
 {% block body %}
+	{{ dump(brandList) }}
+	{{ dump(modelList) }}
 	{% if cars is not defined %}
 		{% set cars = [] %}
 	{% endif %}

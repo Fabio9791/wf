@@ -5,10 +5,21 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\DTO\Car;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Extractor\ExtractorInterface;
 
-class DefaultController extends Controller
+class DefaultController
 {
+    private $twig;
+    private $brandExtractor;
+    private $modelExtractor;
+    
+    public function __construct(\Twig_Environment $twig, ExtractorInterface $brandExtractor, ExtractorInterface $modelExtractor )
+    {
+        $this->twig = $twig;
+        $this->brandExtractor = $brandExtractor;
+        $this->modelExtractor = $modelExtractor;
+    }
+    
     /**
      * Homepage
      * 
@@ -35,7 +46,14 @@ class DefaultController extends Controller
         array_push($carList, $car1);
         array_push($carList, $car2);
         
-        return $this->render('homepage.html.twig',['cars'=>$carList]);
+        return new Response(
+            $this->twig->render('homepage.html.twig',[
+                'cars'=>$carList,
+                'brandList' => $this->brandExtractor->extractList($carList),
+                'modelList' => $this->modelExtractor->extractList($carList)
+                
+            ])
+        );
     }
 }
 

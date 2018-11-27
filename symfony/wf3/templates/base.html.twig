@@ -12,7 +12,15 @@
     	{% block header %}
     		{% include 'header.html.twig' %}
     	{% endblock %}
-        {% block body %}{% endblock %}
+    	<nav>
+    		<ul>
+    			<li><a href="/about">About</a></li>
+    			<li><a href="/">Home</a></li>
+    		</ul>
+		</nav>
+		<main>
+            {% block body %}{% endblock %}
+        </main>
         {% block footer %}
     		{% include 'footer.html.twig' %}
     	{% endblock %}
