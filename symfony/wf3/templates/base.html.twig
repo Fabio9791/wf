@@ -12,12 +12,9 @@
     	{% block header %}
     		{% include 'header.html.twig' %}
     	{% endblock %}
-    	<nav>
-    		<ul>
-    			<li><a href="/about">About</a></li>
-    			<li><a href="/">Home</a></li>
-    		</ul>
-		</nav>
+    	{% block navbar %}
+    		{% include 'navbar.html.twig' %}
+    	{% endblock %}
 		<main>
             {% block body %}{% endblock %}
         </main>

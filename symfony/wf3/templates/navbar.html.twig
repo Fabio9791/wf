@@ -1,0 +1,7 @@
+<nav>
+	{% set route = app.request.get('_route') %}
+	<ul>
+		<li><a href="{{ path("about") }}" {% if route == 'about' %}class="active"{% endif %}>About</a></li>
+		<li><a href="{{ path("homepage") }}" {% if route == 'homepage' %}class="active"{% endif %}>Home</a></li>
+	</ul>
+</nav>

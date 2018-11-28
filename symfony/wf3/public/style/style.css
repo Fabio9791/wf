@@ -11,7 +11,7 @@ main {
 
 header {
 	display: flex;
-	background-color: lightblue;
+	background-color: rgb(72, 144, 211);
 }
 
 header img {
@@ -19,7 +19,7 @@ header img {
 }
 
 footer {
-	background-color: lightblue;
+	background-color: rgb(72, 144, 211);
 	position: fixed;
 	bottom: 0;
 	padding: 0.3rem;
@@ -37,8 +37,12 @@ nav ul {
 
 nav ul li a {
 	padding: 0.5rem 1rem;
-	background-color: lightgray;
+	background-color: lightblue;
 	margin: 0 0.3rem;
 	text-decoration: none;
 	color: black;
+}
+
+.active {
+	background-color: rgb(72, 144, 211)
 }
