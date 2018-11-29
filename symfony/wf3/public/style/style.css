@@ -11,7 +11,9 @@ main {
 
 header {
 	display: flex;
+	justify-content: space-between;
 	background-color: rgb(72, 144, 211);
+	margin-bottom: 2.5rem;
 }
 
 header img {
@@ -33,16 +35,34 @@ nav ul {
 	list-style: none;
 	padding: 0 1rem;
 	flex-direction: row-reverse;
+	margin-top: 2rem;
+	margin-right: 4rem;
 }
 
 nav ul li a {
 	padding: 0.5rem 1rem;
-	background-color: lightblue;
+	background-color: rgb(57, 113, 167);
 	margin: 0 0.3rem;
 	text-decoration: none;
-	color: black;
+	color: white;
+	border: 1px white solid;
+	border-radius: 5px;
+}
+
+.search input {
+	border-radius: 5px;
+	border: 1px rgb(72, 144, 211) solid;
+	padding: 0.3rem;
+}
+
+.search button {
+	border-radius: 5px;
+	margin-left: 1rem;
+	background-color: rgb(72, 144, 211);
+	padding: 0.3rem;
+	color: white;
 }
 
 .active {
-	background-color: rgb(72, 144, 211)
+	background-color: rgb(56, 192, 238);
 }

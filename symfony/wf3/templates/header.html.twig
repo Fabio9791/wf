@@ -1,3 +1,7 @@
 <header>
-	<img alt="symfony logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Symfony2.svg/2000px-Symfony2.svg.png">
+	<img alt="symfony logo"
+		src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Symfony2.svg/2000px-Symfony2.svg.png">
+	{% block navbar %}
+	    {% include 'navbar.html.twig' %}
+	{% endblock %}
 </header>

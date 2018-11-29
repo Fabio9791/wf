@@ -12,7 +12,7 @@ class BrandController extends AbstractController
 
     /**
      *
-     * @Route("/brand/search", name="search_brand")
+     * @Route("/brand/search", name="search_brand", methods={"GET","OPTIONS"})
      */
     public function search(Request $request)
     {
@@ -28,10 +28,16 @@ class BrandController extends AbstractController
         $repository = $manager->getRepository(Brand::class);
         $pattern = $request->query->get('pattern');
 
-        $brands = $repository->findByName($pattern);
+        $brands = $repository->findByNameLike($pattern);
 
-        return $this->json([
+        $response = $this->json([
             'data' => $brands
         ]);
+        
+        if($request->getMethod() == 'OPTIONS'){
+           $response->setContent(''); 
+        }
+           
+        return $response;
     }
 }
