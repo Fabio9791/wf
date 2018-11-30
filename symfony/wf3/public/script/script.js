@@ -1,4 +1,4 @@
-$("form").on("submit", function (e) {
+$("#searchBrand").on("submit", function (e) {
     e.preventDefault();
     $("#brands").html("");
     if (!$("#brandsInput").val() == "") {

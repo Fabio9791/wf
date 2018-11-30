@@ -1,8 +1,27 @@
 <nav>
 	{% set route = app.request.get('_route') %}
 	<ul>
-		<li><a href="{{ path("create_car") }}" {% if route == 'create_car' %}class="active"{% endif %}>Create</a></li>
-		<li><a href="{{ path("about") }}" {% if route == 'about' %}class="active"{% endif %}>About</a></li>
-		<li><a href="{{ path("homepage") }}" {% if route == 'homepage' %}class="active"{% endif %}>Home</a></li>
+		<li><a href="{{ path("list_seats") }}"
+			{% if route == 'list_seats' %} class="active" {% endif %}>List
+				Seats</a></li>
+		<li><a href="{{ path("list_brands") }}"
+			{% if route == 'list_brands' %} class="active" {% endif %}>List
+				Brands</a></li>
+		<li><a href="{{ path("list_cars") }}"
+			{% if route == 'list_cars' %} class="active" {% endif %}>List
+				Cars</a></li>
+		<li><a href="{{ path("create_seat") }}"
+			{% if route == 'create_seat' %} class="active" {% endif %}>Create
+				Seat</a></li>
+		<li><a href="{{ path("create_brand") }}"
+			{% if route == 'create_brand' %} class="active" {% endif %}>Create
+				Brand</a></li>
+		<li><a href="{{ path("create_car") }}"
+			{% if route == 'create_car' %} class="active" {% endif %}>Create
+				Car</a></li>
+		<li><a href="{{ path("about") }}" {% if route == 'about' %}
+			class="active" {% endif %}>About</a></li>
+		<li><a href="{{ path("homepage") }}" {% if route == 'homepage' %}
+			class="active" {% endif %}>Home</a></li>
 	</ul>
 </nav>

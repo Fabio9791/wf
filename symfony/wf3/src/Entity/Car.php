@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CarRepository")
@@ -20,22 +21,31 @@ class Car
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Choice({"red","green","black"})
      */
     private $color;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $model;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Brand", inversedBy="cars")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank
      */
     private $brand;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Seat")
+     * @Assert\Count(
+     *      min = 1,
+     *      max = 7,
+     *      minMessage = "You must specify at least one seat",
+     *      maxMessage = "You cannot specify more than 7 seats"
+     * )
      */
     private $seats;
 
@@ -88,7 +98,7 @@ class Car
     /**
      * @return Collection|Seat[]
      */
-    public function getSeat(): Collection
+    public function getSeats(): Collection
     {
         return $this->seats;
     }

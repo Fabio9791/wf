@@ -49,7 +49,7 @@ class Brand
      *
      * @return mixed
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }

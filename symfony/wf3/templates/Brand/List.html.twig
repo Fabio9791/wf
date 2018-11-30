@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<ul>
+	{% for brand in brands %}
+	<li>{{ brand.name }}
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}

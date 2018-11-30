@@ -6,6 +6,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Entity\Brand;
+use App\Form\BrandFormType;
 
 class BrandController extends AbstractController
 {
@@ -40,4 +41,45 @@ class BrandController extends AbstractController
            
         return $response;
     }
+    
+    /**
+     *
+     * @Route("/brand/create", name="create_brand", methods={"GET", "POST"})
+     */
+    public function createBrand(Request $request)
+    {
+        $brand = new Brand();
+        $form = $this->createForm(BrandFormType::class, $brand, [
+            'standalone' => true
+        ]);
+        
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($brand);
+            $manager->flush();
+            
+            return $this->redirectToRoute('list_brands');
+        }
+        
+        return $this->render('Brand/Create.html.twig', [
+            'formObj' => $form->createView()
+        ]);
+    }
+    
+    /**
+     * @Route("/brand/list", name="list_brands")
+     */
+    public function showAll()
+    {
+        $repository = $this->getDoctrine()->getRepository(Brand::class);
+        
+        // look for *all* Product objects
+        $brands = $repository->findAll();
+        
+        return $this->render('Brand/List.html.twig', ['brands' => $brands]);
+        
+    }
+    
+    
 }

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<ul>
+	{% for car in cars %}
+	<li>Brand : {{ car.getBrand().name }}  | 
+	Model : {{ car.model }}  | 
+	Color : {{  car.color }}</li>
+	{% endfor %}
+</ul>
+{% endblock %}
