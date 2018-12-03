@@ -50,6 +50,12 @@ nav ul li a {
 	border-radius: 5px;
 }
 
+nav ul li a:hover {
+	background-color: rgb(107, 164, 218);
+	text-decoration: none;
+	color: white;
+}
+
 .search button {
 	border-radius: 5px;
 	background-color: rgb(72, 144, 211);

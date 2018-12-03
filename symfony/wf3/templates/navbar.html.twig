@@ -1,6 +1,16 @@
 <nav>
 	{% set route = app.request.get('_route') %}
 	<ul>
+		{% if is_granted('IS_AUTHENTICATED_FULLY')  %}
+		<li><a href="{{ path("logout") }}"
+			{% if route == 'logout' %} class="active" {% endif %}>Logout</a></li>
+		{% endif %}
+		{% if not is_granted('IS_AUTHENTICATED_FULLY')  %}
+		<li><a href="{{ path("login") }}"
+			{% if route == 'login' %} class="active" {% endif %}>Login</a></li>
+		<li><a href="{{ path("register") }}"
+			{% if route == 'register' %} class="active" {% endif %}>Sign In</a></li>
+		{% endif %}	
 		<li><a href="{{ path("list_seats") }}"
 			{% if route == 'list_seats' %} class="active" {% endif %}>List
 				Seats</a></li>
