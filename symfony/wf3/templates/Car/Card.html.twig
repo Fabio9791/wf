@@ -1,0 +1,20 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ car.getBrand().getName() }}  {{ car.getModel() }}</h5>
+    	<div class="card-text">
+        	<p >
+        		Color:
+        		{{ car.getColor() }}
+        	</p>
+        	<div>
+        		<p>Seats:</p>
+        		<ul>
+        			{% for seat in car.getSeats() %}
+        			<li>{{ seat.getLabel() }}</li>
+        			{% endfor %}
+        		</ul>
+        	</div>
+        </div>
+	</div>
+</div>
+

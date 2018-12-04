@@ -1,4 +1,4 @@
-body {
+* {
 	box-sizing: border-box;
 	transition-duration: 0.3s;
 	margin: 0;
@@ -69,7 +69,7 @@ nav ul li a:hover {
 
 .search input {
 	border-radius: 5px;
-	border: 1px rgb(72, 144, 211) solid;
+	border: 1px solid rgb(72, 144, 211);
 	padding: 0.3rem;
 	margin-bottom: 0.5rem;
 }

@@ -3,35 +3,29 @@
 	<ul>
 		{% if is_granted('IS_AUTHENTICATED_FULLY')  %}
 		<li><a href="{{ path("logout") }}"
-			{% if route == 'logout' %} class="active" {% endif %}>Logout</a></li>
+			{% if route == 'logout' %} class="active" {% endif %}>{{ 'Logout'|trans }}</a></li>
 		{% endif %}
 		{% if not is_granted('IS_AUTHENTICATED_FULLY')  %}
 		<li><a href="{{ path("login") }}"
-			{% if route == 'login' %} class="active" {% endif %}>Login</a></li>
+			{% if route == 'login' %} class="active" {% endif %}>{{ 'Login'|trans }}</a></li>
 		<li><a href="{{ path("register") }}"
-			{% if route == 'register' %} class="active" {% endif %}>Sign In</a></li>
+			{% if route == 'register' %} class="active" {% endif %}>{{ 'SignIn'|trans }}</a></li>
 		{% endif %}	
 		<li><a href="{{ path("list_seats") }}"
-			{% if route == 'list_seats' %} class="active" {% endif %}>List
-				Seats</a></li>
+			{% if route == 'list_seats' %} class="active" {% endif %}>{{ 'ListSeats'|trans }}</a></li>
 		<li><a href="{{ path("list_brands") }}"
-			{% if route == 'list_brands' %} class="active" {% endif %}>List
-				Brands</a></li>
+			{% if route == 'list_brands' %} class="active" {% endif %}>{{ 'ListBrands'|trans }}</a></li>
 		<li><a href="{{ path("list_cars") }}"
-			{% if route == 'list_cars' %} class="active" {% endif %}>List
-				Cars</a></li>
+			{% if route == 'list_cars' %} class="active" {% endif %}>{{ 'ListCars'|trans }}</a></li>
 		<li><a href="{{ path("create_seat") }}"
-			{% if route == 'create_seat' %} class="active" {% endif %}>Create
-				Seat</a></li>
+			{% if route == 'create_seat' %} class="active" {% endif %}>{{ 'CreateSeat'|trans }}</a></li>
 		<li><a href="{{ path("create_brand") }}"
-			{% if route == 'create_brand' %} class="active" {% endif %}>Create
-				Brand</a></li>
+			{% if route == 'create_brand' %} class="active" {% endif %}>{{ 'CreateBrand'|trans }}</a></li>
 		<li><a href="{{ path("create_car") }}"
-			{% if route == 'create_car' %} class="active" {% endif %}>Create
-				Car</a></li>
+			{% if route == 'create_car' %} class="active" {% endif %}>{{ 'CreateCar'|trans }}</a></li>
 		<li><a href="{{ path("about") }}" {% if route == 'about' %}
-			class="active" {% endif %}>About</a></li>
+			class="active" {% endif %}>{{ 'About'|trans }}</a></li>
 		<li><a href="{{ path("homepage") }}" {% if route == 'homepage' %}
-			class="active" {% endif %}>Home</a></li>
+			class="active" {% endif %}>{{ 'Home'|trans }}</a></li>
 	</ul>
 </nav>

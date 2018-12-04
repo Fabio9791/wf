@@ -3,6 +3,11 @@
 {% block title %}{{ parent() }} homepage{% endblock %}
 
 {% block body %}
+
+	{% set foo = '<script>alert("'~fitb~'")</script>' %}
+	{{ foo|toBold }}
+	
+	{{ '<script>alert("Fabio is the best")</script>'|toBold }}
 	
 	<form class="search" id="searchBrand">
 		<input type="text" placeholder="Search a brand" id="brandsInput"><button type="submit">Search</button>

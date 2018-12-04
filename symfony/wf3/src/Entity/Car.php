@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CarRepository")
@@ -16,18 +17,21 @@ class Car
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"car", "car.id"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Choice({"red","green","black"})
+     * @Groups({"car", "car.color"})
      */
     private $color;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
+     * @Groups({"car", "car.model"})
      */
     private $model;
 
@@ -35,6 +39,7 @@ class Car
      * @ORM\ManyToOne(targetEntity="App\Entity\Brand", inversedBy="cars")
      * @ORM\JoinColumn(nullable=false)
      * @Assert\NotBlank
+     * @Groups({"car", "car.brand"})
      */
     private $brand;
 
@@ -46,6 +51,7 @@ class Car
      *      minMessage = "You must specify at least one seat",
      *      maxMessage = "You cannot specify more than 7 seats"
      * )
+     * @Groups({"car", "car.seats"})
      */
     private $seats;
 

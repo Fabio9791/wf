@@ -4,6 +4,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BrandRepository")
@@ -14,17 +15,20 @@ class Brand
      * @ORM\Id
      * @ORM\Column(type="guid")
      * @ORM\GeneratedValue(strategy="UUID")
+     * @Groups({"brand", "brand.id"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"brand", "brand.name"})
      */
     private $name;
 
     /**
      * @ORM\ManyToOne(targetEntity="Brand")
      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
+     * @Groups({"brand", "brand.parent"})
      */
     private $parent;
 

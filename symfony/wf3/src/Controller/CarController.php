@@ -6,6 +6,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Car;
 use App\Form\CarFormType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class CarController extends Controller
 {
@@ -15,7 +16,7 @@ class CarController extends Controller
      *
      * @Route("/car/create", name="create_car", methods={"GET", "POST"})
      */
-    public function createCar(Request $request)
+    public function createCar(Request $request, Session $session)
     {
         $car = new Car();
         $form = $this->createForm(CarFormType::class, $car, [
@@ -27,6 +28,8 @@ class CarController extends Controller
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($car);
             $manager->flush();
+            
+            $session->getFlashBag()->add('success', 'the car was successfully created');
             
             return $this->redirectToRoute('list_cars');
         }

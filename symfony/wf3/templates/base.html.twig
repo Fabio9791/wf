@@ -16,11 +16,17 @@
 	{% block header %}
 	{% include 'header.html.twig' %}
 	{% endblock %}
-	<main> {% block body %} {% endblock %} </main>
+	<main> {% for category, flashMessages in app.session.flashbag.all() %}
+	{% if category == 'success' %} {% set class = 'alert-success' %} {% endif %}
+	<div class="alert {{ class }}" role="alert">
+		{{ flashMessages|join(',') }}
+	</div>
+	{% endfor %}
+	{% block body %} {% endblock %} </main>
 	{% block footer %}
 	{% include 'footer.html.twig' %}
 	{% endblock %}
-	{% block javascripts %}
+	{% block javascript %}
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script

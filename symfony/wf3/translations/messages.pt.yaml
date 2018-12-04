@@ -1,0 +1,11 @@
+Home:         Casa
+About:        Sobre
+CreateCar:    CriarCarro
+CreateBrand:  CriarMarca
+CreateSeat:   CriarAssento
+ListCars:     ListaCarros
+ListBrands:   ListaMarcas
+ListSeats:    ListaAssentos
+SignIn:       Registrar
+Login:        Entrar
+Logout:       Sair
